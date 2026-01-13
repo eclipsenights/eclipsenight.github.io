@@ -7,8 +7,12 @@
     <title>THE MISERY</title>
     <link rel="icon" type="image/png" href="public/qqq1.png">
 
-    <meta property="og:title" content="THE MISERY">
-    <meta property="og:image" content="public/qqq1.png">
+    <meta name="description" content="Investigate MISERY Corporation and recover declassified data in this atmospheric horror terminal.">
+    <meta property="og:title" content="THE MISERY // Access Terminal">
+    <meta property="og:description" content="The G4 District is decaying. Will you survive the secrets of the mansion?">
+    <meta property="og:image" content="https://miserystudios.github.io/public/qqq1.png">
+    <meta property="og:url" content="https://miserystudios.github.io/">
+    <meta property="og:type" content="website">
     <meta name="theme-color" content="#836fff">
 
     <style>
@@ -106,7 +110,9 @@
             <div class="label">Live Gameplay Feed</div>
             <div class="gameplay-container" id="vidBox">
                 <div class="vid-overlay">MOUSE OVER TO INITIALIZE</div>
-                <video id="gameVid" muted playsinline loop><source src="public/trailer.mp4" type="video/mp4"></video>
+                <video id="gameVid" muted playsinline loop>
+                    <source src="public/trailer.mp4" type="video/mp4">
+                </video>
             </div>
         </section>
 
@@ -169,12 +175,14 @@
     </div>
 
     <script>
+        // KORUMA SCRIPTİ
         document.onkeydown = function(e) {
             if(e.keyCode == 123) return false;
             if(e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) return false;
             if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
         }
 
+        // GALERİ SCRIPTİ
         let currentSlide = 0;
         const track = document.getElementById('track');
         const slides = document.querySelectorAll('.slide');
@@ -183,11 +191,11 @@
             track.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
 
+        // VİDEO DÖNGÜ SCRIPTİ (8-30sn)
         const vidBox = document.getElementById('vidBox');
         const gameVid = document.getElementById('gameVid');
 
         if(vidBox && gameVid) {
-            // Mouse gelince 8. saniyeden başlat
             vidBox.addEventListener('mouseenter', () => { 
                 if (gameVid.currentTime < 8 || gameVid.currentTime >= 30) {
                     gameVid.currentTime = 8;
@@ -196,7 +204,6 @@
             });
             vidBox.addEventListener('mouseleave', () => { gameVid.pause(); });
 
-            // 30. saniyeye gelince 8'e geri sar
             gameVid.addEventListener('timeupdate', () => {
                 if (gameVid.currentTime >= 30) {
                     gameVid.currentTime = 8;
