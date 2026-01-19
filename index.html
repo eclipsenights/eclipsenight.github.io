@@ -10,11 +10,11 @@
     <meta property="og:title" content="THE MISERY">
     <meta property="og:description" content="Official Terminal Entry // G4 District">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://miserystudios.github.io/public/background.png?v=12345">
+    <meta property="og:image" content="https://miserystudios.github.io/public/background.png?v=999">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://miserystudios.github.io/public/background.png?v=12345">
+    <meta name="twitter:image" content="https://miserystudios.github.io/public/background.png?v=999">
     <meta name="theme-color" content="#836fff">
 
     <style>
@@ -27,7 +27,8 @@
 
         .bg-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('public/background.png');
+            /* SİTE ARKA PLANI: Burada embed.png kullanılıyor */
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('public/embed.png');
             background-size: cover; z-index: -1;
         }
 
@@ -62,14 +63,12 @@
         .story-content { max-width: 800px; margin: 0 auto; background: rgba(10,10,10,0.8); border-left: 5px solid #836fff; padding: 40px; }
         .story-content p { font-size: 18px; line-height: 1.8; color: #ccc; margin-bottom: 20px; }
 
-        /* FEATURES */
         .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
         .feat-card { background: #080808; border: 1px solid #151515; padding: 40px; transition: 0.3s; }
         .feat-card:hover { border-color: #836fff; background: #0c0c0c; transform: translateY(-5px); }
         .feat-card h3 { color: #836fff; font-weight: 900; letter-spacing: 2px; margin-bottom: 10px; text-transform: uppercase; }
         .feat-card p { color: #888; font-weight: 700; line-height: 1.5; }
 
-        /* GALLERY (ARCHIVES) */
         .map-slider { position: relative; width: 100%; max-width: 850px; margin: 0 auto; border: 1px solid #222; overflow: hidden; background: #000; }
         .slider-track { display: flex; transition: transform 0.6s cubic-bezier(0.83, 0, 0.17, 1); }
         .slide { min-width: 100%; position: relative; aspect-ratio: 16/9; overflow: hidden; cursor: zoom-in; }
@@ -80,7 +79,6 @@
         .arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.8); border: 1px solid #836fff; color: #fff; width: 45px; height: 80px; cursor: pointer; z-index: 20; display: flex; align-items: center; justify-content: center; }
         .next { right: 0; } .prev { left: 0; }
 
-        /* LATEST BRIEFINGS */
         .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .news-box { position: relative; height: 250px; border: 1px solid #222; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; }
         .news-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; filter: brightness(0.25); z-index: 1; transition: 0.5s; }
