@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="icon" type="image/png" href="public/qqq1.png">
-    <title>THE MISERY</title>
+    <title>ECLIPSE NIGHT</title>
 
-    <meta property="og:title" content="THE MISERY">
+    <meta property="og:title" content="ECLIPSE NIGHT">
     <meta property="og:description" content="Official Terminal Entry // G4 District">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://miserystudios.github.io/">
+    <meta property="og:url" content="https://mindvox.github.io/">
     
-    <meta property="og:image" content="https://miserystudios.github.io/public/embed.png">
-    <meta property="og:image:secure_url" content="https://miserystudios.github.io/public/embed.png">
+    <meta property="og:image" content="https://mindvox.github.io/public/embed.png">
+    <meta property="og:image:secure_url" content="https://mindvox.github.io/public/embed.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/miserystudios/miserystudios.github.io/main/public/embed.png">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/mindvox/eclipsenight/main/public/embed.png">
     <meta name="theme-color" content="#836fff">
 
     <style>
@@ -34,7 +34,7 @@
         .bg-overlay {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), 
-                        url('https://miserystudios.github.io/public/background.png');
+                        url('https://mindvox.github.io/public/background.png');
             background-size: cover; 
             background-position: center;
             background-attachment: fixed;
@@ -59,7 +59,7 @@
 
         #home { height: 75vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         .the-text { font-size: 38px; font-weight: 900; letter-spacing: 22px; color: #836fff; margin-bottom: -15px; margin-left: 22px; opacity: 0.9; }
-        h1 { font-size: clamp(60px, 12vw, 150px); letter-spacing: 45px; font-weight: 900; margin-right: -45px; text-shadow: 0 0 40px rgba(131,111,255,0.5); margin-bottom: 40px; }
+        h1 { font-size: clamp(50px, 10vw, 120px); letter-spacing: 35px; font-weight: 900; margin-right: -35px; text-shadow: 0 0 40px rgba(131,111,255,0.5); margin-bottom: 40px; }
         .main-dl { background: #836fff; color: #000; padding: 18px 60px; text-decoration: none; font-weight: 900; font-size: 16px; letter-spacing: 4px; transition: 0.3s; border-radius: 2px; cursor: pointer; }
         .main-dl:hover { background: #fff; transform: scale(1.05); box-shadow: 0 0 30px #836fff; }
 
@@ -110,7 +110,7 @@
     <div class="container">
         <section id="home">
             <div class="the-text">THE</div>
-            <h1>MISERY</h1>
+            <h1>ECLIPSE NIGHT</h1>
             <div onclick="initDownload()" class="main-dl">DOWNLOAD NOW</div>
         </section>
 
@@ -127,9 +127,9 @@
         <section id="story">
             <div class="label">Declassified Story</div>
             <div class="story-content">
-                <p>Five years have passed since the infamous G4 Cyborg Incident plagued <strong>MISERY Corporation</strong>. With the corporation now being bankrupted, the once busy G4 district is slowly decaying.</p>
-                <p>You awake inside a mysterious mansion with only a <strong>MISERY</strong> employee card in your pocket. Who are you? How did you end up here? And what does <strong>MISERY Corporation</strong> have to do with any of it?</p>
-                <p>Investigate <strong>MISERY Corporation</strong> and dig up dark truths that were probably better left forgotten. Solve puzzles, explore, and survive as you learn about the dark secrets held inside the decommissioned facility.</p>
+                <p>Five years have passed since the infamous G4 Cyborg Incident plagued <strong>ECLIPSE Night</strong>. With the corporation now being bankrupted, the once busy G4 district is slowly decaying.</p>
+                <p>You awake inside a mysterious mansion with only an <strong>ECLIPSE</strong> employee card in your pocket. Who are you? How did you end up here? And what does the <strong>ECLIPSE</strong> legacy have to do with any of it?</p>
+                <p>Investigate the echoes of the past and dig up dark truths that were probably better left forgotten. Solve puzzles, explore, and survive as you learn about the dark secrets held inside the decommissioned facility.</p>
             </div>
         </section>
 
@@ -187,30 +187,23 @@
             </div>
         </section>
 
-        <footer>MISERY // MINDVOX STUDIOS © 2026</footer>
+        <footer>ECLIPSE NIGHT // MINDVOX STUDIOS © 2026</footer>
     </div>
 
     <script>
-        // AGRESİF KORUMA: Konsol açılırsa tarayıcıyı dondurur
         setInterval(function() { debugger; }, 100);
-
-        // SAĞ TIK VE SEÇME ENGELİ
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.addEventListener('selectstart', e => e.preventDefault());
-
-        // TUŞ KOMBİNASYONLARI ENGELİ
         document.onkeydown = function(e) {
-            // F12, Ctrl+Shift+I, Ctrl+U, Ctrl+S engeli
             if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) || (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0))) return false;
         }
 
-        // GİZLİ İNDİRME SİSTEMİ (Link Base64 olarak kodun içine gömüldü)
         function initDownload() {
-            const _0x836 = "aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpL20zZGUybWlzY3o1NDVoMnE5cjBxby9UaGVNaXNlcnkuZXhlP3Jsa2V5PXowamxwcXZycm5zN3oycXFzaTRwMWd3Z28mc3Q9dGs1cHZmamUmZGw9MQ==";
+            // Şifrelenmiş Dropbox linkin (dl=1 modunda)
+            const _0x836 = "aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vc2NsL2ZpL20zZGUybWlzY3o1NDVoMnE5cjBxby9FY2xpcHNlTmlnaHQuZXhlP3Jsa2V5PXowamxwcXZycm5zN3oycXFzaTRwMWd3Z28mc3Q9b2VwOWt4eTQmZGw9MQ==";
             window.location.href = atob(_0x836);
         }
 
-        // SLIDER SİSTEMİ
         let currentSlide = 0;
         const track = document.getElementById('track');
         const slides = document.querySelectorAll('.slide');
@@ -219,7 +212,6 @@
             track.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
 
-        // VİDEO SİSTEMİ
         const vidBox = document.getElementById('vidBox');
         const gameVid = document.getElementById('gameVid');
         if(vidBox && gameVid) {
